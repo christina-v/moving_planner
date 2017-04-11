@@ -1,35 +1,33 @@
 
 function loadData() {
 
-    var $body = $('body');
+    var $pic = $('#googlePic');
     var $wikiElem = $('#wikipedia-links');
     var $nytHeaderElem = $('#nytimes-header');
     var $nytElem = $('#nytimes-articles');
     var $greeting = $('#greeting');
+    var $weather = $('#weather-temp');
 
     // clear out old data before new request
     $wikiElem.text("");
     $nytElem.text("");
 
     var streetStr = $('#street').val();
-    var cityStr = $('#city').val();
+    var cityStr = $('#city').val();  
     var address = streetStr + ', ' + cityStr;
 
-    $greeting.text('So, you want to live at ' + address + '?');
+    $greeting.text('Details about ' + cityStr);
 
     // load streetview
-    var streetviewUrl = 'http://maps.googleapis.com/maps/api/streetview?size=600x400&location=' + address + '';
-    $body.append('<img class="bgimg" src="' + streetviewUrl + '">');
-
-
+    /*var streetviewUrl = 'http://maps.googleapis.com/maps/api/streetview?size=600x400&location=' + address + '';
+    $pic.append('<img class="bgimg" src="' + streetviewUrl + '">');*/
 
 
     // load nytimes
-    // obviously, replace all the "X"s with your own API key
-    var nytimesUrl = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?q=' + cityStr + '&sort=newest&api-key=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
+    var nytimesUrl = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?q=' + cityStr + '&sort=newest&api-key=7896b0c4693342eebda60466d11ea408';
     $.getJSON(nytimesUrl, function(data){
 
-        $nytHeaderElem.text('New York Times Articles About ' + cityStr);
+        $nytHeaderElem.text('New York Times articles about ' + cityStr);
 
         articles = data.response.docs;
         for (var i = 0; i < articles.length; i++) {
@@ -41,7 +39,7 @@ function loadData() {
         };
 
     }).error(function(e){
-        $nytHeaderElem.text('New York Times Articles Could Not Be Loaded');
+        $nytHeaderElem.text('New York Times articles Could Not Be Loaded');
     });
 
 
@@ -73,3 +71,4 @@ function loadData() {
 };
 
 $('#form-container').submit(loadData);
+
