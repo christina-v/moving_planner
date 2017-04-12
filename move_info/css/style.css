@@ -1,46 +1,91 @@
 /*{box-sizing:border-box;}*/
 
 body {
-    background-color: #c2e0d8;
+    background-color: white;
     font-family: "Arial", Arial, sans-serif;
 }
 
+.t {
 
-.bgimg {
-    position:fixed;
-    opacity:1;
-    width: 100%;
 }
 
+.bg{
+    background: url(../img/pan1.jpeg);
+    background-repeat:no-repeat;
+    background-position: center; 
+    width: 100%;
+    height:200px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+
 .greeting {
-    color: #4d5956;
+    color: white;
     text-align: center;
-    font-size: 2em;
+    font-size: 2.5em;
     position: relative;
+    padding-top: 5px;
+}
+
+.element {
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+.element2 {
+    text-shadow:
+        .5px 1px 0 #000,
+        0px 1px 0 #000,
+        .5px 1px 0 #000,
+        0px 1px 0 #000;
 }
 
 .wikipedia-container {
-    width:25%;
-    padding:15px;
+    padding:10px;
     /*float:right;*/
     /*margin-right: 15px;*/
     background-color: rgba(255,255,255,0.7);
     border-style: solid;
-    border-color: #b9ab99;
+    border-color: #584646;
+    position: relative;
+    top:202px;
 }
 
-.wiki-links {
-    text-align: left;
-}
+/*.wiki-links {
+    margin: 0;
+    padding: 12px;
+}*/
+
+
+
+ #map {
+   width: 470px;
+   height: 450px;
+   background-color: grey;
+ }
+ .gMap{
+    /*top:500px;
+    left:600px;*/
+    top: 240px;
+     border-style: solid;
+    border-color: #584646;
+ }
+
 
 .nytimes-container {
-    padding: 15px;
-    width: 50%;
+    padding: 10px;
+    padding-top: 20px;
     /*float:left;
     margin-right:300px;*/
     background-color: rgba(255,255,255,0.7);
     border-style: solid;
-    border-color: #b9ab99;
+    border-color: #584646;
+    position: relative;
+    top:212px;
 }
 
 .article-list {
@@ -64,25 +109,26 @@ body {
 }
 
 #nytimes-header {
-    color: #45504d;
+    color: #10a7b9;
 }
 
 #wikipedia-header {
-    color: #45504d;
+    color: #10a7b9;
 }
 
 
 li a {
 
-    color: #7d674c;
+    color: #833459;
     text-align: center;
     text-decoration: none;
     font-size: 15px;
     font-style: italic;
+    font-weight: bold;
 }
 
 li a:hover {
-    background-color: #80b5b8;
+    background-color: #d5bbc7;
     color:black;
 }
 
@@ -100,20 +146,18 @@ li a:hover {
 }
 [class*="col-"] {
     float: left;
-    padding: 15px;
+    padding: 10px;
 }
-html {
-    font-family: "Arial", Arial, sans-serif;
-}
+
 
 
 /* For desktop: */
 .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}
-.col-3 {width: 50%%;}
+.col-3 {width: 24%;}
 .col-4 {width: 33.33%;}
 .col-5 {width: 41.66%;}
-.col-6 {width: 25%;}
+.col-6 {width: 50%;}
 .col-7 {width: 58.33%;}
 .col-8 {width: 66.66%;}
 .col-9 {width: 75%;}

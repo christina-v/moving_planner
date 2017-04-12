@@ -1,43 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>City Info</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+  
+    <div class="bg" >
 
-    <hr>
-
-    <h2 id="greeting" class="greeting">Get city information!</h2>
+    <h1 id="greeting" class="greeting element">Choose a City!</h1>
     <div id='moveForm'>
    <form id="form-container" class="form-container">
         <!--<label for="street">Street: </label><input type="text" id="street" value="">-->
-        <label for="city">City: </label><input type="text" id="city" value="">
+        <div style="padding-bottom: 15px">
+        <label style="color:white;" for="city">City: </label>
+        <input type="textbox" id="cityN" value="">
         <button id="submit-btn">Search</button>
+
+        </div>
     </form>
     </div>
 
-        <div class="nytimes-container col-3 col-m-4">
-        <h3 id="nytimes-header">New York Times Articles</h3>
-        <ul id="nytimes-articles" class="article-list">Enter a city and hit search and the NY Times will tell you provide you info here!</ul>
     </div>
+ <!-- end of div container-->
 
+    <div class = "row">  
 
-       <!--<div id='placeImage'></div>-->
-    <div class=" col-6"></div>
-
-    <div class="wikipedia-container col-3 col-m-3">
-        <h3 id="wikipedia-header">Relevant Wikipedia Links</h3>
-        <ul id="wikipedia-links">Type in an address above to find relevant Wikipedia articles here!</ul>
+    <div class="nytimes-container col-6">
+        <h3 id="nytimes-header" class="element2">New York Times Articles</h3>
+        <ul id="nytimes-articles" class="article-list">Enter a city and hit search and the NY Times will provide you info here!</ul>
     </div>
+   
+    <div class=" col-1"></div>
+
+    <div class="col-5">
+    <div class="wikipedia-container">
+        <h3 id="wikipedia-header" class="element2">Wikipedia Links</h3>
+        <ul id="wikipedia-links" class="wiki-links">Type in an address above to find relevant Wikipedia articles here!</ul>
+    </div>
+     <!-- GOOGLE MAP-->
+        <div class ="gMap" id="map"></div>
+    </div> <!--end of wiki row-->
+ 
+
+    </div><!--end of row-->
+
+
+ <script>
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 8,
+        center: {lat: 42.3601, lng: -71.0589}
+    });
+        var geocoder = new google.maps.Geocoder();
+
+        document.getElementById('submit').addEventListener('click', function() {
+            geocodeAddress(geocoder, map);
+        });
+    }
+    </script>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiY79jdLmFlldQxlLxnwL1phuyGl_tWeE&callback=initMap">
+    </script>
 
 
     <script src="js/libs/jquery.min.js"></script>
     <script src="js/script.js"></script>
-
-    
+   
 
 
 </body>
